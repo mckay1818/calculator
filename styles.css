@@ -1,0 +1,52 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: normal;
+    font-size: larger;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: lightseagreen;
+}
+
+.calculator-grid {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+#result-display {
+    grid-column: 1 / -1;
+    background-color: rgb(252, 252, 113);
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 8px;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+#prev-operand {
+    font-size: 0.8em;
+    color: rgb(109, 109, 109);
+}
+
+.span-two {
+    grid-column: span 2;
+}
+
+button {
+    border: 2px solid whitesmoke;
+    background-color: rgb(215, 133, 247);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgb(234, 189, 252);
+}
