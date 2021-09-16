@@ -1,25 +1,24 @@
 //get DOM elements
-const resultDisplay = document.getElementById("result-display");
-const currentOperand = document.getElementById("current-operand");
-const previousOperand = document.getElementById("prev-operand");
+const currentOperandTextBox = document.getElementById("current-operand");
+const previousOperandTextBox = document.getElementById("prev-operand");
 const equalsBtn = document.getElementById("equals-btn");
 const deleteBtn = document.getElementById("delete-btn");
 const clearBtn = document.getElementById("clear-btn");
-const numberBtns = document.querySelectorAll("number-btn");
-const operatorBtns = document.querySelectorAll("operator-btn");
+const numberBtns = document.querySelectorAll(".number-btn");
+const operatorBtns = document.querySelectorAll(".operator-btn");
 
 
 //calculator constructor + functionality
-function Calculator(previousOperand, currentOperand) {
-    this.currentOperand = currentOperand;
-    this.previousOperand = previousOperand;  
+function Calculator(previousOperandTextBox, currentOperandTextBox) {
+    this.currentOperandTextBox = currentOperandTextBox;
+    this.previousOperandTextBox = previousOperandTextBox;  
     this.allClear();
 }
 
 Calculator.prototype.updateDisplay = function() {
-    this.currentOperand.innerText = this.currentOperand;
+    this.currentOperandTextBox.innerText = this.currentOperand;
     if (this.operator != null) {
-        this.previousOperand.innerText = '${this.previousOperand} ${this.operator}';
+        this.previousOperandTextBox.innerText = '${this.previousOperand} ${this.operator}';
     }
     
 }
@@ -78,7 +77,7 @@ Calculator.prototype.compute = function() {
 }
 
 
-const calculator = new Calculator (previousOperand, currentOperand);
+let calculator = new Calculator(previousOperandTextBox, currentOperandTextBox);
 
 //add event listeners
 numberBtns.forEach(button => {
@@ -97,6 +96,7 @@ operatorBtns.forEach(button => {
 
 clearBtn.addEventListener('click', button => {
     calculator.allClear();
+    calculator.updateDisplay();
 })
 
 deleteBtn.addEventListener('click', button => {
