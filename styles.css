@@ -8,7 +8,8 @@
 body {
     padding: 0;
     margin: 0;
-    background-color: lightseagreen;
+    background: rgb(114,9,183);
+background: linear-gradient(322deg, rgba(114,9,183,1) 0%, rgba(247,37,133,0.3443877551020408) 100%);
 }
 
 .calculator-grid {
@@ -22,7 +23,7 @@ body {
 
 .result-display {
     grid-column: 1 / -1;
-    background-color: rgb(252, 252, 113);
+    background-color: whitesmoke;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -30,11 +31,13 @@ body {
     padding: 8px;
     word-wrap: break-word;
     word-break: break-all;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .prev-operand {
     font-size: 0.8em;
-    color: rgb(109, 109, 109);
+    color: rgba(66, 66, 66, 0.726);
 }
 
 button {
@@ -50,3 +53,16 @@ button:hover {
 .span-two {
     grid-column: span 2;
 }
+
+.delete-btn {
+    background-color: #991bec;
+}
+
+.clear-btn, .equals-btn {
+    background-color: #991bec;
+}
+
+.operator-btn {
+    background-color: #c304e9;
+}
+
