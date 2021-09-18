@@ -22,7 +22,11 @@ class Calculator {
 
     addDigit(digit) {
         if (digit === '.' && this.currentOperand.includes('.')) return;
-        this.currentOperand += digit;;
+        if (digit === '.' && this.currentOperand === '') {
+            this.currentOperand = '0.';
+        } else {
+        this.currentOperand += digit;
+        }
     }
 
     removeDigit() {
@@ -31,6 +35,7 @@ class Calculator {
 
     evaluate() {
         let solution;
+        if (this.previousOperand === '') return;
         const prev = parseFloat(this.previousOperand);
         const current = parseFloat(this.currentOperand); 
         switch(this.operator) {
