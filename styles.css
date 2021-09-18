@@ -20,7 +20,7 @@ body {
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
-#result-display {
+.result-display {
     grid-column: 1 / -1;
     background-color: rgb(252, 252, 113);
     display: flex;
@@ -32,7 +32,7 @@ body {
     word-break: break-all;
 }
 
-#prev-operand {
+.prev-operand {
     font-size: 0.8em;
     color: rgb(109, 109, 109);
 }
