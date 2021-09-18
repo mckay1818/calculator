@@ -37,10 +37,6 @@ body {
     color: rgb(109, 109, 109);
 }
 
-.span-two {
-    grid-column: span 2;
-}
-
 button {
     border: 2px solid whitesmoke;
     background-color: rgb(215, 133, 247);
@@ -49,4 +45,8 @@ button {
 button:hover {
     cursor: pointer;
     background-color: rgb(234, 189, 252);
+}
+
+.span-two {
+    grid-column: span 2;
 }
